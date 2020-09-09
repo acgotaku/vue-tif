@@ -41,12 +41,12 @@ export default class Tif extends Vue {
         this.width = widh;
         this.height = height;
         const ctx = canvas.getContext("2d");
-        const imgDate = new ImageData(
+        const imgData = new ImageData(
           new Uint8ClampedArray(rgba.buffer),
           widh,
           height
         );
-        ctx?.putImageData(imgDate, 0, 0);
+        ctx?.putImageData(imgData, 0, 0);
         canvas.toBlob(blob => {
           this.imgData = URL.createObjectURL(blob);
         });
